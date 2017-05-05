@@ -6,11 +6,11 @@ version = "1.0.0"
 
 ext {
     bintrayRepo = 'maven'
-    bintrayName = 'gif-player'
+    bintrayName = 'gifplayer'
 
     publishedGroupId = 'com.whiteelephant'
-    libraryName = 'gif-player'
-    artifact = 'gif-player'
+    libraryName = 'gifplayer'
+    artifact = 'gifplayer'
 
     libraryDescription = 'This Project gives a custom view for developers to play the Graphics Interchange Format (GIF) with Start, Stop, Resume and Pause the controls and Callbacks.'
 
