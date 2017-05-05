@@ -14,11 +14,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
-import static com.urbanpiper.gifplayer.GifConstants.DEFAULT_MOVIE_DURATION;
-import static com.urbanpiper.gifplayer.GifConstants.STATE_PAUSED;
-import static com.urbanpiper.gifplayer.GifConstants.STATE_RESUME;
-import static com.urbanpiper.gifplayer.GifConstants.STATE_STARTED;
-import static com.urbanpiper.gifplayer.GifConstants.STATE_STOPED;
+import static com.whiteelephant.gifplayer.GifConstants.*;
 
 public class GifView extends View {
 

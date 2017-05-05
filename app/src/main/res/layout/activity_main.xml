@@ -16,7 +16,7 @@
         android:background="#fff"
         android:gravity="center">
 
-        <com.urbanpiper.gifplayer.GifView
+        <com.whiteelephant.gifplayer.GifView
             android:id="@+id/gif"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
