@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="GifView">
+        <attr name="animationSpeed" format="float" />
+        <attr name="src" format="reference" />
+        <attr name="playMode" format="enum">
+            <enum name="PLAY_ONCE" value="100"/>
+            <enum name="PLAY_REPEAT" value="101"/>
+        </attr>
+    </declare-styleable>
+</resources>
