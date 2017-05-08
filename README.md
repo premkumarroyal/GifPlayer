@@ -29,19 +29,16 @@ Simple and small library to play Graphics Interchange Format (GIF) in Android wi
 ## Usage :
 
    Add Gradle Dependency in your `build.gradle` file
-
-      ```compile 'com.whiteelephant:gifplayer:1.0.0'
-      ```
+       compile 'com.whiteelephant:gifplayer:1.0.0'
 
    or Maven
-
-   ```<dependency>
-     <groupId>com.whiteelephant</groupId>
-     <artifactId>gifplayer</artifactId>
-     <version>1.0.0</version>
-     <type>pom</type>
-   </dependency>
-   ```
+       <dependency>
+         <groupId>com.whiteelephant</groupId>
+         <artifactId>gifplayer</artifactId>
+         <version>1.0.0</version>
+         <type>pom</type>
+       </dependency>
+   
 
 
 ##### Add the GIF view to your layout
