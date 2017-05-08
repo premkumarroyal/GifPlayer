@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         _gif.addOnStopListener(new GifView.GifStopListener() {
             @Override
-            public void onGifStopped() {
+            public void onGifStoped() {
                 Log.d(TAG, " Callback onGifStopped");
             }
         });

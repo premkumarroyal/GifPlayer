@@ -21,9 +21,10 @@ public class GifView extends View {
     private static final String TAG = GifView.class.getName();
 
     private Movie _movie;
-
     private long _gifStartedTime = 0;
     private int _currentAnimationTime = 0;
+
+    // reducing or increasing  the speed of the animation by using '_animationMultiplier'
     float _animationMultiplier = 1f;
     int _repeatMode;
     int _gifID;
@@ -35,31 +36,26 @@ public class GifView extends View {
     private GifResumeListener _gifResumeListener;
     private GifCompletionListener _gifCompletionListener;
 
-
     public static final int PLAY_ONCE = 100;
     public static final int PLAY_REPEAT = 101;
+
+    private int DEFAULT_GIF_PLAY_MODE = PLAY_REPEAT;
+    private int DEFAULT_GIF_SPEED = 1;
 
     public GifView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        /**
-         * Starting from HONEYCOMB have to turn off HardWare acceleration to draw
-         * Movie on Canvas.
-         */
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-        }
 
         TypedArray a = getContext().obtainStyledAttributes(
                 attrs,
                 com.whiteelephant.gifplayer.R.styleable.GifView);
 
         if (a.hasValue(com.whiteelephant.gifplayer.R.styleable.GifView_playMode)) {
-            setPlayMode(a.getInt(com.whiteelephant.gifplayer.R.styleable.GifView_playMode, 0));
+            setPlayMode(a.getInt(com.whiteelephant.gifplayer.R.styleable.GifView_playMode, DEFAULT_GIF_PLAY_MODE));
         }
 
         if (a.hasValue(com.whiteelephant.gifplayer.R.styleable.GifView_animationSpeed)) {
-            setAnimationSpeed(a.getFloat(com.whiteelephant.gifplayer.R.styleable.GifView_animationSpeed, 0));
+            setAnimationSpeed(a.getFloat(com.whiteelephant.gifplayer.R.styleable.GifView_animationSpeed, DEFAULT_GIF_SPEED));
         }
 
         if (a.hasValue(com.whiteelephant.gifplayer.R.styleable.GifView_src)) {
@@ -68,6 +64,9 @@ public class GifView extends View {
             setGIFResource(value);
         }
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        }
     }
 
     public void setGIFResource(@RawRes int gifID) {
@@ -101,14 +100,14 @@ public class GifView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         if (_movie != null) {
-            updateAnimationTime();
+            updateGifPlayingTime();
             drawGif(canvas);
         } else {
             drawGif(canvas);
         }
     }
 
-    private void updateAnimationTime() {
+    private void updateGifPlayingTime() {
 
         long now = android.os.SystemClock.uptimeMillis();
         if (_gifStartedTime == 0) {
@@ -116,18 +115,16 @@ public class GifView extends View {
         }
         int dur = _movie.duration();
         if (dur == 0) {
-            dur = DEFAULT_MOVIE_DURATION;
+            dur = DEFAULT_GIF_DURATION;
         }
 
         if (_state == STATE_STOPED) {
             _currentAnimationTime = _movie.duration() + 1000;
         } else if (_state != STATE_RESUME && _state != STATE_PAUSED) {
-            // reducing or increasing  the speed of the animation by using '_animationMultiplier'
             _currentAnimationTime = (int) (((android.os.SystemClock.uptimeMillis() - _gifStartedTime)
                     * _animationMultiplier));
         } else {
-            // reducing or increasing  the speed of the animation by using '_animationMultiplier'
-            _currentAnimationTime = (int) (((hello(_resumedAt) - _gifStartedTime)
+            _currentAnimationTime = (int) (((getGifPlayingTime(_resumedAt) - _gifStartedTime)
                     * _animationMultiplier));
         }
 
@@ -137,9 +134,7 @@ public class GifView extends View {
     }
 
     private void drawGif(Canvas canvas) {
-       /* Log.d(TAG, " Animation current time " + _currentAnimationTime);
-        Log.d(TAG, " Movie duration " + _movie.duration());
-        */
+
         if (_state == STATE_STOPED) {
             gifStopped();
             _resumedAt = 0;
@@ -155,8 +150,6 @@ public class GifView extends View {
             if (_currentAnimationTime < _movie.duration()) {
                 invalidate();
             } else {
-                /*Log.d(TAG, " on Completion : movie duration : " + _movie.duration());
-                Log.d(TAG, " on Completion : _currentAnim : " + _currentAnimationTime);*/
                 gifCompleted();
             }
         }
@@ -233,7 +226,7 @@ public class GifView extends View {
 
     public void gifStopped() {
         if (_gifStopListener != null) {
-            _gifStopListener.onGifStopped();
+            _gifStopListener.onGifStoped();
         } else {
             Log.i(TAG, "Gif Stopped but but no listeners found. If you want to receive the" +
                     "call backs, Please set the handler before you call stop method");
@@ -264,7 +257,7 @@ public class GifView extends View {
         }
     }
 
-    private long hello(long hello) {
+    private long getGifPlayingTime(long hello) {
         int i = 8;
         if (_state == PLAY_REPEAT) {
             i = (int) (i * _animationMultiplier);
@@ -279,7 +272,7 @@ public class GifView extends View {
     }
 
     public interface GifStopListener {
-        void onGifStopped();
+        void onGifStoped();
     }
 
     public interface GifPauseListener {

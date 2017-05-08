@@ -6,7 +6,7 @@ package com.whiteelephant.gifplayer;
 
 class GifConstants {
 
-    static final int DEFAULT_MOVIE_DURATION = 1000;
+    static final int DEFAULT_GIF_DURATION = 1000;
 
     final static int STATE_STARTED = 0;
     final static int STATE_STOPED = 1;
