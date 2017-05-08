@@ -55,21 +55,21 @@ or Maven
              
             
  
- ##### Custom xml attributes :
+ ##### Custom xml attributes:
  
-* **animationSpeed** : Speed of GIF. Programatically increase/decrease the Speed of GIF. Default speed is 1.
+* **animationSpeed** : Speed of GIF. Programmatically increase/decrease the Speed of GIF. The default speed is 1.
 * **playMode** : We can play the GIF only once or repeat. You can set the PLAY_REPEAT or PLAY_ONCE.
 * **src** : Pass the GIF 
     
-##### Set atrributes Programatically :
+##### Set attributes Programmatically:
 
 * setAnimationSpeed(float speed)
 * setPlayMode(int playMode)
 * setGIFResource(@RawRes gif)
     
-##### Add the listners :
+##### Add the listeners:
 
-Need need to implement unnecessary listeners just add the those you use.
+We seriously don't want you to implement unnecessary listeners, just add those which really you use.
     
     addOnStartListener(GifView.GifStartListener onStart)
     addOnStopListener(GifView.GifStartListener onStop)
