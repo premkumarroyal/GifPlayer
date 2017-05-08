@@ -1,24 +1,33 @@
 # GifPlayer
-Simple and powerful library to play Graphics Interchange Format (GIF) in Android with Start, Stop, Resume, Pause, Completion the controls with Callbacks.
+Simple and small library to play Graphics Interchange Format (GIF) in Android with Start, Stop, Resume, Pause, Completion the controls with Callbacks.
 
 
+## Advantages
 
-# Advantages
-*. You will get notified on Gi
- * started   
- * Stoped
- * Paused
- * Resumed
- * Completed
+* Get notify for each action that you perform
 
-*. You can use GIFView to play your GIF so you can add this view to any layout in your app such as 
- * Activity
- * Fragment
- * Style Sheets
- * Dialogs
- etc...
+Actions | Listners
+------------ | -------------
+start() | onGifStarted()
+stop() | onGifStoped()
+pause() | onGifPaused()
+resume() | onGifResumed()
+ | onGifComplete()
+  
+NOTE : onGifComplete() will be notified if GIF is in PLAY_ONCE mode.
 
-# How to use
+* Play GIF One time or Repeatedly. 
+
+* It is just a View so you can add this view to any layout in your app such as 
+  * Activity
+  * Fragment
+  * Style Sheets
+  * Dialogs
+  etc...
+
+
+## Usage :
+
 
 
 
