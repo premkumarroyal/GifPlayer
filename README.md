@@ -28,10 +28,12 @@ NOTE : onGifComplete() will be notified if GIF is in PLAY_ONCE mode.
 
 ## Usage :
 
-Add Gradle Dependency in your `build.gradle` file
-    compile 'com.whiteelephant:gifplayer:1.0.0'
+Add Gradle Dependency in your build.gradle file
+
+  compile 'com.whiteelephant:gifplayer:1.0.0'
 
 or Maven
+
     <dependency>
     <groupId>com.whiteelephant</groupId>
     <artifactId>gifplayer</artifactId>
@@ -44,12 +46,12 @@ or Maven
 ##### Add the GIF view to your layout
 
     <com.whiteelephant.gifplayer.GifView
-    android:id="@+id/gif"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:animationSpeed="1"
-    app:playMode="PLAY_REPEAT"
-    app:src="@raw/car" />
+       android:id="@+id/gif"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       app:animationSpeed="1"
+       app:playMode="PLAY_REPEAT"
+       app:src="@raw/car" />
              
             
  
@@ -68,11 +70,11 @@ or Maven
 ##### Add the listners :
 
 Need need to implement unnecessary listeners just add the those you use.
-    * addOnStartListener(GifView.GifStartListener onStart)
-    * addOnStopListener(GifView.GifStartListener onStop)
-    * addOnResumeListener(GifView.GifResumeListener onResume)
-    * addOnPauseListener(GifView.GifPauseListener onPause)
-    * addOnCompletionListener(GifView.GifCompletionListener onCompletion)  
+    addOnStartListener(GifView.GifStartListener onStart)
+    addOnStopListener(GifView.GifStartListener onStop)
+    addOnResumeListener(GifView.GifResumeListener onResume)
+    addOnPauseListener(GifView.GifPauseListener onPause)
+    addOnCompletionListener(GifView.GifCompletionListener onCompletion)  
 
  
 
