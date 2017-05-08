@@ -6,13 +6,13 @@ Simple and small library to play Graphics Interchange Format (GIF) in Android wi
 
 * Get notify for each action that you perform
 
-Actions | Listners
------------- | -------------
-start() | onGifStarted()
-stop() | onGifStoped()
-pause() | onGifPaused()
-resume() | onGifResumed()
- | onGifComplete()
+   Actions | Listners
+   ------------ | -------------
+   start() | onGifStarted()
+   stop() | onGifStoped()
+   pause() | onGifPaused()
+   resume() | onGifResumed()
+    | onGifComplete()
   
 NOTE : onGifComplete() will be notified if GIF is in PLAY_ONCE mode.
 
