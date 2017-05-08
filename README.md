@@ -4,53 +4,56 @@ Simple and small library to play Graphics Interchange Format (GIF) in Android wi
 
 ## Advantages
 
-* Play GIF One time or Repeatedly.
+   * Play GIF One time or Repeatedly.
 
-* Get notified for each action that you perform
+   * Get notified for each action that you perform
 
-   Actions | Listners
-   ------------ | -------------
-   start() | onGifStarted()
-   stop() | onGifStopped()
-   pause() | onGifPaused()
-   resume() | onGifResumed()
-    -- | onGifComplete()
-  
-   NOTE : onGifComplete() will be notified if GIF is in PLAY_ONCE mode.
+      Actions | Listners
+      ------------ | -------------
+      start() | onGifStarted()
+      stop() | onGifStopped()
+      pause() | onGifPaused()
+      resume() | onGifResumed()
+       -- | onGifComplete()
 
-* It is just a View so you can add this view to any layout in your app such as 
-  * Activity
-  * Fragment
-  * Style Sheets
-  * Dialogs
-  etc...
+      NOTE : onGifComplete() will be notified if GIF is in PLAY_ONCE mode.
+
+   * It is just a View so you can add this view to any layout in your app such as 
+     * Activity
+     * Fragment
+     * Style Sheets
+     * Dialogs
+     etc...
 
 
 ## Usage :
 
-Add Gradle Dependency in your `build.gradle` file
+   Add Gradle Dependency in your `build.gradle` file
 
-   compile 'com.whiteelephant:gifplayer:1.0.0' 
-   
-or Maven
+      ```compile 'com.whiteelephant:gifplayer:1.0.0'
+      ```
 
-<dependency>
-  <groupId>com.whiteelephant</groupId>
-  <artifactId>gifplayer</artifactId>
-  <version>1.0.0</version>
-  <type>pom</type>
-</dependency>
+   or Maven
+
+   ```<dependency>
+     <groupId>com.whiteelephant</groupId>
+     <artifactId>gifplayer</artifactId>
+     <version>1.0.0</version>
+     <type>pom</type>
+   </dependency>
+   ```
 
 
 ##### Add the GIF view to your layout
 
-<com.whiteelephant.gifplayer.GifView
-            android:id="@+id/gif"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:animationSpeed="1"
-            app:playMode="PLAY_REPEAT"
-            app:src="@raw/car" />
+   ```<com.whiteelephant.gifplayer.GifView
+               android:id="@+id/gif"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               app:animationSpeed="1"
+               app:playMode="PLAY_REPEAT"
+               app:src="@raw/car" />
+               ```
             
  
  ##### Custom xml attributes :
@@ -67,12 +70,13 @@ or Maven
     
 ##### Add the listners :
 
-  Need need to implement unnecessary listeners just add the those you use.
-    * addOnStartListener(GifView.GifStartListener onStart)
-    * addOnStopListener(GifView.GifStartListener onStop)
-    * addOnResumeListener(GifView.GifResumeListener onResume)
-    * addOnPauseListener(GifView.GifPauseListener onPause)
-    * addOnCompletionListener(GifView.GifCompletionListener onCompletion)    
+     Need need to implement unnecessary listeners just add the those you use.
+       ```* addOnStartListener(GifView.GifStartListener onStart)
+       * addOnStopListener(GifView.GifStartListener onStop)
+       * addOnResumeListener(GifView.GifResumeListener onResume)
+       * addOnPauseListener(GifView.GifPauseListener onPause)
+       * addOnCompletionListener(GifView.GifCompletionListener onCompletion)    
+       ```
 
  
 
