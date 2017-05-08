@@ -57,9 +57,9 @@ or Maven
  
  ##### Custom xml attributes :
  
-* animationSpeed : Speed of GIF. Programatically increase/decrease the Speed of GIF. Default speed is 1.
-* playMode : We can play the GIF only once or repeat. You can set the PLAY_REPEAT or PLAY_ONCE.
-* src : Pass the GIF 
+* **animationSpeed** : Speed of GIF. Programatically increase/decrease the Speed of GIF. Default speed is 1.
+* **playMode** : We can play the GIF only once or repeat. You can set the PLAY_REPEAT or PLAY_ONCE.
+* **src** : Pass the GIF 
     
 ##### Set atrributes Programatically :
 
