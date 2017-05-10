@@ -36,6 +36,18 @@ public class GifView extends View {
     private GifResumeListener _gifResumeListener;
     private GifCompletionListener _gifCompletionListener;
 
+
+    /**
+     * Scaling factor to fit the animation within view bounds.
+     */
+    private float mScale;
+
+    /**
+     * Scaled movie frames width and height.
+     */
+    private int mMeasuredMovieWidth;
+    private int mMeasuredMovieHeight;
+
     public static final int PLAY_ONCE = 100;
     public static final int PLAY_REPEAT = 101;
 
@@ -219,14 +231,14 @@ public class GifView extends View {
         if (_gifStartListener != null) {
             _gifStartListener.onGifStarted();
         } else {
-            Log.i(TAG, "GifStarted but but no listeners found. If you want to receive the" +
-                    "call backs, Please set the handler before you call start method");
+            Log.i(TAG, "GifStarted but no listeners found. If you want to receive the" +
+                    " call backs, Please set the handler before you call start method");
         }
     }
 
     public void gifStopped() {
         if (_gifStopListener != null) {
-            _gifStopListener.onGifStoped();
+            _gifStopListener.onGifStopped();
         } else {
             Log.i(TAG, "Gif Stopped but but no listeners found. If you want to receive the" +
                     "call backs, Please set the handler before you call stop method");
@@ -258,7 +270,7 @@ public class GifView extends View {
     }
 
     private long getGifPlayingTime(long hello) {
-        int i = 8;
+        int i = 10;
         if (_state == PLAY_REPEAT) {
             i = (int) (i * _animationMultiplier);
         }
@@ -272,7 +284,7 @@ public class GifView extends View {
     }
 
     public interface GifStopListener {
-        void onGifStoped();
+        void onGifStopped();
     }
 
     public interface GifPauseListener {

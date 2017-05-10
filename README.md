@@ -9,7 +9,7 @@ Simple and small library to play Graphics Interchange Format (GIF) in Android wi
    Actions | Listners
    ------------ | -------------
    start() | onGifStarted()
-   stop() | onGifStoped()
+   stop() | onGifStopped()
    pause() | onGifPaused()
    resume() | onGifResumed()
     | onGifComplete()

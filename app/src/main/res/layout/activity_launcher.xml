@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_launcher"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.whiteelephant.gifplayersample.LauncherActivity">
+
+
+    <Button
+        android:id="@+id/listners"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="listners" />
+
+
+    <Button
+        android:id="@+id/ice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ice Cream Delivery" />
+
+    <Button
+        android:id="@+id/skate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Skating" />
+
+
+    <Button
+        android:id="@+id/join_us"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Join Us" />
+
+
+    <Button
+        android:id="@+id/order_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Order Confirm" />
+
+
+    <Button
+        android:id="@+id/dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dialog" />
+
+</LinearLayout>
+
+

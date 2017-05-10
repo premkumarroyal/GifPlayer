@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+
+    <TextView
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:text="Join Us"
+        android:textColor="#379D9C"
+        android:textSize="25sp" />
+
+
+    <TextView
+        android:id="@+id/mail_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/head"
+        android:layout_marginTop="10dp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:text="Send your resume to :"
+        android:textColor="#313163"
+        android:textSize="18sp" />
+
+
+
+    <TextView
+        android:id="@+id/mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mail_head"
+        android:layout_marginTop="15dp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:text="carrers@whiteelephant.com"
+        android:textColor="#CE3163"
+        android:textSize="20sp" />
+
+    <com.whiteelephant.gifplayer.GifView
+        android:id="@+id/gif"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        app:playMode="PLAY_REPEAT"
+        android:layout_centerInParent="true"
+        app:src="@raw/join_us" />
+
+</RelativeLayout>

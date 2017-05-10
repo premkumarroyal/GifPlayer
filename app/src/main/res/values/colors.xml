@@ -3,4 +3,16 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+
+    <color name="ice_cream_bg_clr">#DBDBDB</color>
+    <color name="ice_cream_txt_clr">#663333</color>
+    <color name="ice_cream_sub_title_txt_clr">#937070</color>
+
+    <color name="skate_bg_clr">#FEBA58</color>
+    <color name="order_bg_clr">#F5E7CF</color>
+    
+    
+    <color name="order_screen_txt_clr">#379D9C</color>
+    <color name="join_us_txt_clr">#CE3163</color>
 </resources>
