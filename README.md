@@ -5,8 +5,9 @@ Simple and small library to play Graphics Interchange Format (GIF) in Android wi
 ## Sample Project output:
 
 ![GifPlayer](https://j.gifs.com/nZyRrW.gif "Order Delivery")   ![Alt GifPlayer](https://j.gifs.com/oYzZQB.gif "Go Skate")
-![GifPlayer](https://j.gifs.com/pgAZgp.gif "Listners")   ![GifPlayer](https://j.gifs.com/g5op5k.gif "Dialog")
-![GifPlayer](https://j.gifs.com/AnZ6P3.gif "Ice Cream Delivery")
+![GifPlayer](https://j.gifs.com/AnZ6P3.gif "Ice Cream Delivery") ![GifPlayer](https://j.gifs.com/pgAZgp.gif "Listners")
+![GifPlayer](https://j.gifs.com/g5op5k.gif "Dialog")
+
 
 
 ## Advantages
