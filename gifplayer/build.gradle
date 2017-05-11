@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-version = "1.0.0"
+version = "1.1.0"
 
 ext {
     bintrayRepo = 'maven'
@@ -17,7 +17,7 @@ ext {
     siteUrl = ''
     gitUrl = 'https://github.com/premkumarroyal/GifPlayer.git'
 
-    libraryVersion = '1.0.0'
+    libraryVersion = '1.1.0'
 
     developerId = 'premkumarroyal'
     developerName = 'Prem Kumar'
