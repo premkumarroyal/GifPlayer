@@ -37,7 +37,7 @@ NOTE : onGifComplete() will be notified if GIF is in PLAY_ONCE mode.
 
 Add Gradle Dependency in your build.gradle file
 
-    compile 'com.whiteelephant:gifplayer:1.0.0'
+    compile 'com.whiteelephant:gifplayer:1.2.0'
 
 or Maven
 
