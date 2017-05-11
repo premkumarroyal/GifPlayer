@@ -2,7 +2,7 @@
 Simple and small library to play Graphics Interchange Format (GIF) in Android with Start, Stop, Resume, Pause, Completion the controls with Callbacks.
 
 
-#Sample Project output:
+## Sample Project output:
 
 ![GifPlayer](https://j.gifs.com/nZyRrW.gif "Order Delivery")   ![Alt GifPlayer](https://j.gifs.com/oYzZQB.gif "Go Skate")
 ![GifPlayer](https://j.gifs.com/pgAZgp.gif "Listners")   ![GifPlayer](https://j.gifs.com/g5op5k.gif "Dialog")
