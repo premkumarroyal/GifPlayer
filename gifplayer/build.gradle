@@ -2,33 +2,12 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-version = "1.1.0"
+import groovy.swing.SwingBuilder
 
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'gifplayer'
-
-    publishedGroupId = 'com.whiteelephant'
-    libraryName = 'gifplayer'
-    artifact = 'gifplayer'
-
-    libraryDescription = 'This Project gives a custom view for developers to play the Graphics Interchange Format (GIF) with Start, Stop, Resume and Pause the controls and Callbacks.'
-
-    siteUrl = ''
-    gitUrl = 'https://github.com/premkumarroyal/GifPlayer.git'
-
-    libraryVersion = '1.1.0'
-
-    developerId = 'premkumarroyal'
-    developerName = 'Prem Kumar'
-    developerEmail = 'premkumarroyal@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
+version = "1.2.0"
 
 android {
+
     compileSdkVersion 24
     buildToolsVersion "24.0.3"
 
@@ -47,6 +26,67 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+}
+
+
+ext {
+
+    def v_bintrayRepo = ''
+    def v_bintrayName = ''
+    def v_publishedGroupId = ''
+    def v_libraryName = ''
+    def v_artifact = ''
+    def v_libraryDescription = ''
+    def v_gitUrl = ''
+    def v_libraryVersion = ''
+    def v_developerId = ''
+    def v_developerName = ''
+    def v_developerEmail = ''
+
+    def versionPropsFile = file('bintray.properties')
+    def Properties versionProps = new Properties()
+
+    if (versionPropsFile.canRead()) {
+        versionProps.load(new FileInputStream(versionPropsFile))
+
+        v_bintrayRepo = versionProps['bintrayRepo'].toString()
+        v_bintrayName = versionProps['bintrayName'].toString()
+        v_publishedGroupId = versionProps['publishedGroupId'].toString()
+        v_libraryName = versionProps['libraryName'].toString()
+        v_artifact = versionProps['artifact'].toString()
+        v_libraryDescription = versionProps['libraryDescription'].toString()
+        v_gitUrl = versionProps['gitUrl'].toString()
+        v_libraryVersion = versionProps['libraryVersion'].toString()
+        v_developerId = versionProps['developerId'].toString()
+        v_developerName = versionProps['developerName'].toString()
+        v_developerEmail = versionProps['developerEmail'].toString()
+
+    } else {
+        throw new GradleException("Could not read bintray.properties!")
+    }
+
+    bintrayRepo = "${v_bintrayRepo}"
+    bintrayName = "${v_bintrayName}"
+
+
+    publishedGroupId = "${v_publishedGroupId}"
+    libraryName = "${v_libraryName}"
+    artifact = "${v_artifact}"
+
+    libraryDescription = "${v_libraryDescription}"
+
+    siteUrl = ''
+    gitUrl = "${v_gitUrl}"
+
+    libraryVersion = "${v_libraryVersion}"
+
+    developerId = "${v_developerId}"
+    developerName = "${v_developerName}"
+    developerEmail = "${v_developerEmail}"
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
 }
 
 dependencies {
